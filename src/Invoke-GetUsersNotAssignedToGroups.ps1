@@ -2,16 +2,16 @@ Set-StrictMode -Version 3.0
 
 ############################# PARAMETERS ###############################
 # Personal Access Token https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page
-[string]$PAT = "bwlr5xtrvdousysrr4dpyijphn22vgex7746jcldmlnst3y5keuq"
+[string]$PAT = "<your_token>"
 
 # Name of the ADO Org targeted
-[string]$ADOOrg = "ckwilson4gmail"
+[string]$ADOOrg = "<your_org>"
 
 # Version https://docs.microsoft.com/en-us/azure/devops/integrate/concepts/rest-api-versioning?view=azure-devops
 [string]$ADOAPIVersion = "api-version=6.0-preview.1"
 
-# Array of ADOGroups to search for membership
-[string[]]$ADOGroupList = @("ckwilson4gmail Group")
+# Array of ADOGroups to search for membership. Add these groups below ("Test Group 1", "Test Group 2") in <your_org> --> Settings --> Permissions
+[string[]]$ADOGroupList = @("Test Group 1", "Test Group 2")
 
 # Variables used in execution
 [System.Collections.Specialized.OrderedDictionary]$ADOGroups = $null
