@@ -2,10 +2,10 @@ Set-StrictMode -Version 3.0
 
 ############################# PARAMETERS ###############################
 # Personal Access Token https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page
-[string]$PAT = "<your_token>"
+[string]$PAT = "bwlr5xtrvdousysrr4dpyijphn22vgex7746jcldmlnst3y5keuq"
 
 # Name of the ADO Org targeted
-[string]$ADOOrg = "<your_org>"
+[string]$ADOOrg = "ckwilson4gmail"
 
 # Version https://docs.microsoft.com/en-us/azure/devops/integrate/concepts/rest-api-versioning?view=azure-devops
 [string]$ADOAPIVersion = "api-version=6.0-preview.1"
@@ -22,6 +22,7 @@ Set-StrictMode -Version 3.0
 . .\src\Get-ADOAADUsers.ps1
 . .\src\Find-UserInGroup.ps1
 
+# Retrieve Users and Groups
 $ADOAADUsers = Get-ADOAADUsers $PAT $ADOAPIVersion $ADOOrg
 $ADOGroups = Get-ADOCheckGroups $PAT $ADOAPIVersion $ADOOrg $ADOGroupList
 
